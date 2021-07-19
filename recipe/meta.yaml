@@ -1,4 +1,4 @@
-{% set version = "5.2.1-12" %}
+{% set version = "5.2.1-13" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmumps_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmumps/rmumps_{{ version }}.tar.gz
-  sha256: 29fbb8ef01ca6f56f14458edb1803b23c4fccd402268d8323eb0796cdc444e90
+  sha256: c56cd393299cf4d99104e207682a4d906f82656fe7af286ed94c46d64ee5367d
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,16 +51,11 @@ about:
   home: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
   license: GPL-2.0-or-later
   summary: R wrapper for MUMPS (Multifrontal Massively Parallel sparse direct Solver) library
-  description: 'Some basic features of MUMPS (Multifrontal Massively Parallel sparse direct Solver)
-    are wrapped in a class whose methods can be used for sequentially solving a sparse
-    linear system (symmetric or not) with one or many right hand sides (dense or sparse).
-    There is a possibility to do separately symbolic analysis, LU (or LDL^t) factorization
-    and system solving. Third part ordering libraries are included and can be used:
-    PORD, METIS, SCOTCH. MUMPS method was first described in Amestoy et al. (2001) <doi:10.1137/S0895479899358194>
-    and Amestoy et al. (2006) <doi:10.1016/j.parco.2005.07.004>.'
+  description: 'Some basic features of MUMPS (Multifrontal Massively Parallel sparse direct Solver) are wrapped in a class whose methods can be used for sequentially solving a sparse linear system (symmetric or not) with one or many right hand sides (dense or sparse). There is a possibility to do separately symbolic analysis,
+    LU (or LDL^t) factorization and system solving. Third part ordering libraries are included and can be used: PORD, METIS, SCOTCH. MUMPS method was first described in Amestoy et al. (2001) <doi:10.1137/S0895479899358194> and Amestoy et al. (2006) <doi:10.1016/j.parco.2005.07.004>.'
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 extra:
   recipe-maintainers:
     - conda-forge/r
