@@ -1,4 +1,4 @@
-{% set version = "5.2.1-20" %}
+{% set version = "5.2.1-22" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmumps_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmumps/rmumps_{{ version }}.tar.gz
-  sha256: 6ab600f8281a93c60ecea1569568f2a5dc793f08ec16e9bd2cbd609bcf3a559e
+  sha256: e67488e81c0d90fdbf7440d1588c54d1f52a4164e835ea19e671590e05f298a3
 
 build:
   merge_build_host: true  # [win]
