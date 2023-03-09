@@ -1,11 +1,24 @@
+About r-rmumps-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rmumps-feedstock/blob/main/LICENSE.txt)
+
 About r-rmumps
-==============
+--------------
 
 Home: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rmumps-feedstock/blob/main/LICENSE.txt)
+Summary: R wrapper for MUMPS (Multifrontal Massively Parallel sparse direct Solver) library
+
+Some basic features of MUMPS (Multifrontal Massively Parallel sparse direct Solver) are wrapped in a class whose methods can be used for sequentially solving a sparse linear system (symmetric or not) with one or many right hand sides (dense or sparse). There is a possibility to do separately symbolic analysis, LU (or LDL^t) factorization and system solving. Third part ordering libraries are included and can be used: PORD, METIS, SCOTCH. MUMPS method was first described in Amestoy et al. (2001) <doi:10.1137/S0895479899358194> and Amestoy et al. (2006) <doi:10.1016/j.parco.2005.07.004>.
+About r-rmumps
+--------------
+
+Home: http://mumps.enseeiht.fr/, https://github.com/sgsokol/rmumps/
+
+Package license: GPL-2.0-or-later
 
 Summary: R wrapper for MUMPS (Multifrontal Massively Parallel sparse direct Solver) library
 
