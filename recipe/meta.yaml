@@ -1,4 +1,4 @@
-{% set version = "5.2.1-30" %}
+{% set version = "5.2.1-34" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmumps_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmumps/rmumps_{{ version }}.tar.gz
-  sha256: 8445b5770ddb08589f1b6cf71133b9cb51c9819c3189e6a9bba83513566de657
+  sha256: a0529e5f40432d3045c79bae3c5c577c476b538ba324d751b5b91f5592f6aeaa
 
 build:
-  number: 1
+  number: 0
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
   rpaths:
