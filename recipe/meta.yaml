@@ -39,6 +39,7 @@ requirements:
     - r-rcpp >=0.12.0
     - libblas
     - liblapack
+    - zlib
   run:
     - r-base
     - r-rcpp >=0.12.0
