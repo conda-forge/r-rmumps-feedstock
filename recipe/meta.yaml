@@ -1,4 +1,4 @@
-{% set version = "5.2.1-42" %}
+{% set version = "5.2.1-43" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rmumps_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rmumps/rmumps_{{ version }}.tar.gz
-  sha256: 002751a07477e83bffb2ab00ba01e5db52e40043cae6c0a0c11fef4ed620ac67
+  sha256: a76f1d139b59bd90fbc7281990450a80b75eabc56804df245fa73cb17a4478e7
 
 build:
   number: 0
