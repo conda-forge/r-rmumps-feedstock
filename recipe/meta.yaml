@@ -34,15 +34,17 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - r-rcpp >=0.12.12
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-rcpp >=0.12.0
+    - r-rcpp >=0.12.12
     - libblas
     - liblapack
     - zlib
   run:
     - r-base
-    - r-rcpp >=0.12.0
+    - r-rcpp >=0.12.12
 
 test:
   commands:
