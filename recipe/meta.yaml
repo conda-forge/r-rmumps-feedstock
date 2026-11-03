@@ -50,6 +50,8 @@ requirements:
     - zlib
 test:
   commands:
+    - echo "===== rmumps shared library dependencies ====="  # [osx]
+    - find "$PREFIX/lib/R/library/rmumps/libs" -name "*.so" -exec otool -L {} \;  # [osx]
     - $R -e "sessionInfo(); .libPaths(); print(Sys.getenv()); tryCatch(library('rmumps'), error = function(e) { traceback(); stop(e) })"           # [not win]
     - "\"%R%\" -e \"library('rmumps')\""  # [win]
 
