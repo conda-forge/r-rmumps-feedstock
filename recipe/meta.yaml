@@ -45,14 +45,8 @@ requirements:
   run:
     - r-base
     - r-rcpp >=0.12.12
-    - libblas
-    - liblapack
-    - zlib
 test:
   commands:
-    - echo "===== rmumps shared library dependencies ====="  # [osx]
-    - $R -e "p <- find.package('rmumps'); cat('Package:', p, '\n'); print(list.files(file.path(p, 'libs'), full.names=TRUE))"  # [osx]
-    - $R -e "p <- find.package('rmumps'); f <- list.files(file.path(p, 'libs'), full.names=TRUE); for (x in f) { cat('\n===== ', x, ' =====\n'); system2('otool', c('-L', x)) }"  # [osx]
     - $R -e "sessionInfo(); library('rmumps')"  # [not win]
     - "\"%R%\" -e \"library('rmumps')\""  # [win]
 
