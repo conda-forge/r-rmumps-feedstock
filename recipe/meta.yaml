@@ -51,8 +51,9 @@ requirements:
 test:
   commands:
     - echo "===== rmumps shared library dependencies ====="  # [osx]
-    - $R -e "p <- find.package('rmumps'); cat('Package location:', p, '\n'); libs <- list.files(file.path(p, 'libs'), full.names=TRUE); print(libs); invisible(lapply(libs, function(f) system2('otool', c('-L', f))))"  # [osx]
-    - $R -e "sessionInfo(); .libPaths(); print(Sys.getenv()); tryCatch(library('rmumps'), error = function(e) { traceback(); stop(e) })"           # [not win]
+    - $R -e "cat('R library paths:\n'); print(.libPaths()); cat('Package paths:\n'); print(.libPaths())"  # [osx]
+    - $R -e "p <- find.package('rmumps', quiet=TRUE); cat('rmumps location:', p, '\n'); if (nzchar(p)) { libs <- list.files(file.path(p, 'libs'), full.names=TRUE); print(libs); for (f in libs) system2('otool', c('-L', f)) } else { stop('rmumps not found') }"  # [osx]
+    - $R -e "library('rmumps'); sessionInfo()"  # [not win]
     - "\"%R%\" -e \"library('rmumps')\""  # [win]
 
 about:
