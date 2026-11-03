@@ -45,10 +45,12 @@ requirements:
   run:
     - r-base
     - r-rcpp >=0.12.12
-
+    - libblas
+    - liblapack
+    - zlib
 test:
   commands:
-    - $R -e "library('rmumps')"           # [not win]
+    - $R -e "sessionInfo(); .libPaths(); print(Sys.getenv()); tryCatch(library('rmumps'), error = function(e) { traceback(); stop(e) })"           # [not win]
     - "\"%R%\" -e \"library('rmumps')\""  # [win]
 
 about:
