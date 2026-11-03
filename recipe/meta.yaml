@@ -51,7 +51,7 @@ requirements:
 test:
   commands:
     - echo "===== rmumps shared library dependencies ====="  # [osx]
-    - find "$PREFIX/lib/R/library/rmumps/libs" -name "*.so" -exec otool -L {} \;  # [osx]
+    - $R -e "p <- find.package('rmumps'); cat('Package location:', p, '\n'); libs <- list.files(file.path(p, 'libs'), full.names=TRUE); print(libs); invisible(lapply(libs, function(f) system2('otool', c('-L', f))))"  # [osx]
     - $R -e "sessionInfo(); .libPaths(); print(Sys.getenv()); tryCatch(library('rmumps'), error = function(e) { traceback(); stop(e) })"           # [not win]
     - "\"%R%\" -e \"library('rmumps')\""  # [win]
 
