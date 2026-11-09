@@ -10,7 +10,6 @@ provider:
   win: azure
   osx: azure
   linux: azure
-build_platform:
-  osx_arm64: osx_64
+  osx_arm64: default
 test: native_and_emulated
 
